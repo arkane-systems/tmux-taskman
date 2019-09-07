@@ -16,7 +16,7 @@ TASK_POSITION="top"
 TASK_POSITION_OPTION="@taskman-position"
 
 TASK_HEIGHT="16"
-TASK_HEIGHT_OPTION="@taskman-width"
+TASK_HEIGHT_OPTION="@taskman-height"
 
 SUPPORTED_TMUX_VERSION="1.9"
 
