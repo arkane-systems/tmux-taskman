@@ -1,3 +1,38 @@
+# file sourced from ./sidebar.tmux
+command_exists() {
+	local command="$1"
+	type "$command" >/dev/null 2>&1
+}
+
+task_command() {
+	local user_command="$(task_user_command)"
+	if [ -n "$user_command" ]; then
+		echo "$user_command"
+	else
+		echo "top"
+	fi
+}
+
+task_user_command() {
+	get_tmux_option "$TASK_COMMAND_OPTION" ""
+}
+
+task_key() {
+	get_tmux_option "$TASK_OPTION" "$TASK_KEY"
+}
+
+task_focus_key() {
+	get_tmux_option "$TASK_FOCUS_OPTION" "$TASK_FOCUS_KEY"
+}
+
+task_position() {
+	get_tmux_option "$TASK_POSITION_OPTION" "$TASK_POSITION"
+}
+
+task_height() {
+	get_tmux_option "$TASK_HEIGHT_OPTION" "$TASK_HEIGHT"
+}
+
 get_tmux_option() {
 	local option=$1
 	local default_value=$2
@@ -48,6 +83,31 @@ taskman_dir() {
 
 taskman_file() {
 	echo "$(taskman_dir)/pane_height.txt"
+}
+
+# Ensures a message is displayed for 5 seconds in tmux prompt.
+# Does not override the 'display-time' tmux option.
+display_message() {
+	local message="$1"
+
+	# display_duration defaults to 5 seconds, if not passed as an argument
+	if [ "$#" -eq 2 ]; then
+		local display_duration="$2"
+	else
+		local display_duration="5000"
+	fi
+
+	# saves user-set 'display-time' option
+	local saved_display_time=$(get_tmux_option "display-time" "750")
+
+	# sets message display time to 5 seconds
+	tmux set-option -gq display-time "$display_duration"
+
+	# displays message
+	tmux display-message "$message"
+
+	# restores original 'display-time' value
+	tmux set-option -gq display-time "$saved_display_time"
 }
 
 # function is used to get "clean" integer version number. Examples:

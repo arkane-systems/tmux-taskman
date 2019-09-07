@@ -3,7 +3,7 @@ REGISTERED_PANE_PREFIX="@-taskman-registered-pane"
 REGISTERED_TASKMAN_PREFIX="@-taskman-is-taskman"
 MINIMUM_HEIGHT_FOR_TASKMAN="24"
 
-TASK_KEY="\`"
+TASK_KEY="t"
 TASK_OPTION="@taskman-task"
 
 TASK_FOCUS_KEY="~"
