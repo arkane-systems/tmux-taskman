@@ -9,7 +9,7 @@ TASK_OPTION="@taskman-task"
 TASK_FOCUS_KEY="~"
 TASK_FOCUS_OPTION="@taskman-task-focus"
 
-TASK_COMMAND="htop"
+TASK_COMMAND="/usr/bin/htop"
 TASK_COMMAND_OPTION="@taskman-task-command"
 
 TASK_POSITION="top"
