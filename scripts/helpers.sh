@@ -1,4 +1,4 @@
-# file sourced from ./sidebar.tmux
+# file sourced from ./taskman.tmux
 command_exists() {
 	local command="$1"
 	type "$command" >/dev/null 2>&1
@@ -14,7 +14,7 @@ task_command() {
 }
 
 task_user_command() {
-	get_tmux_option "$TASK_COMMAND_OPTION" ""
+	get_tmux_option "$TASK_COMMAND_OPTION" "$TASK_COMMAND"
 }
 
 task_key() {
