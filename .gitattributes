@@ -1,4 +1,4 @@
 # Force text files to have unix eols
 *.* eol=lf
 
-*.gif = binary
+*.gif binary
