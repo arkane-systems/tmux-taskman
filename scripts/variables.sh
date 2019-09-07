@@ -3,13 +3,13 @@ REGISTERED_PANE_PREFIX="@-taskman-registered-pane"
 REGISTERED_TASKMAN_PREFIX="@-taskman-is-taskman"
 MINIMUM_HEIGHT_FOR_TASKMAN="24"
 
-TASK_KEY="t"
+TASK_KEY="\`"
 TASK_OPTION="@taskman-task"
 
 TASK_FOCUS_KEY="~"
 TASK_FOCUS_OPTION="@taskman-task-focus"
 
-TASK_COMMAND="/usr/bin/htop"
+TASK_COMMAND="htop"
 TASK_COMMAND_OPTION="@taskman-task-command"
 
 TASK_POSITION="top"
