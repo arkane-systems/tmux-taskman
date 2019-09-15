@@ -1,5 +1,7 @@
 # tmux-taskman
 
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I3I1VA18)
+
 Based extensively on Bruno Sutic's tmux-sidebar ( https://github.com/tmux-plugins/tmux-sidebar ),
 tmux-taskman also does one thing: it opens a task manager (htop if available, otherwise top, by
 default) pane. A fast and convenient what's-going-on check whatever you're doing in tmux.
